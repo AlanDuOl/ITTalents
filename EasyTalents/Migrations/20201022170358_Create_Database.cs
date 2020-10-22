@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace EasyTalents.Migrations
 {
-    public partial class CreateDatabase : Migration
+    public partial class Create_Database : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -82,8 +82,8 @@ namespace EasyTalents.Migrations
                 {
                     LocationId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    City = table.Column<string>(maxLength: 50, nullable: false),
-                    State = table.Column<string>(maxLength: 50, nullable: false)
+                    City = table.Column<string>(maxLength: 30, nullable: false),
+                    State = table.Column<string>(maxLength: 30, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -316,7 +316,7 @@ namespace EasyTalents.Migrations
                 {
                     UserProfileId = table.Column<int>(nullable: false),
                     ProfessionalInformationId = table.Column<int>(nullable: false),
-                    Value = table.Column<string>(nullable: false)
+                    Value = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -389,8 +389,8 @@ namespace EasyTalents.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "7b4c1c70-a39f-4c4b-9ca1-2cee10af2466", "ab4e061e-dcd8-470d-8bbe-1cbf9308531d", "User", "USER" },
-                    { "b7236d8a-759d-4493-9bed-40365a997d1c", "8da5af53-ce56-48bc-898c-1b4492fab287", "Admin", "ADMIN" }
+                    { "2658c94d-ae30-48d6-b77a-edf3af667805", "bd5104fc-409c-4016-8c84-5b8374a1bb87", "User", "USER" },
+                    { "af52880d-7e06-4fa4-b415-7f26312c825f", "563d50b6-4b82-437e-bb1d-60d12cf22ca0", "Admin", "ADMIN" }
                 });
 
             migrationBuilder.InsertData(

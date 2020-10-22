@@ -137,13 +137,13 @@ namespace EasyTalents.Migrations
 
                     b.Property<string>("City")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.Property<string>("State")
                         .IsRequired()
-                        .HasColumnType("nvarchar(50)")
-                        .HasMaxLength(50);
+                        .HasColumnType("nvarchar(30)")
+                        .HasMaxLength(30);
 
                     b.HasKey("LocationId");
 
@@ -459,7 +459,8 @@ namespace EasyTalents.Migrations
 
                     b.Property<string>("Value")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("UserProfileId", "ProfessionalInformationId");
 
@@ -703,15 +704,15 @@ namespace EasyTalents.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b7236d8a-759d-4493-9bed-40365a997d1c",
-                            ConcurrencyStamp = "8da5af53-ce56-48bc-898c-1b4492fab287",
+                            Id = "af52880d-7e06-4fa4-b415-7f26312c825f",
+                            ConcurrencyStamp = "563d50b6-4b82-437e-bb1d-60d12cf22ca0",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "7b4c1c70-a39f-4c4b-9ca1-2cee10af2466",
-                            ConcurrencyStamp = "ab4e061e-dcd8-470d-8bbe-1cbf9308531d",
+                            Id = "2658c94d-ae30-48d6-b77a-edf3af667805",
+                            ConcurrencyStamp = "bd5104fc-409c-4016-8c84-5b8374a1bb87",
                             Name = "User",
                             NormalizedName = "USER"
                         });
