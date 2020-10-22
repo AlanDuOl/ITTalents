@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { Profile, ProfileResult } from '../model-data';
 import { ProfilesService } from '../profiles.service';
 import { profileSession, uiPath, redirectCode } from '../../constants';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
 import { ErrorService } from 'src/app/error.service';
 import { RedirectService } from 'src/app/redirect.service';
 
@@ -26,6 +26,11 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.profile$ = this.service.fetchProfile().pipe(
+      tap(res => {
+        if (!res) {
+          this.router.navigate([uiPath.error, redirectCode.noProfile]);
+        }
+      }),
       catchError(this.error.handleRedirectRequestError())
     );
   }
