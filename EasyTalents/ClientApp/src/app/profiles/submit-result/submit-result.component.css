@@ -1,0 +1,39 @@
+.submit-view {
+  text-align: center;
+}
+
+.success {
+  background-color: rgba(0, 200, 0, 0.5);
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.info {
+  background-color: rgba(0, 0, 255, 0.5);
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.warning {
+  background-color: rgba(255, 255, 0, 0.5);
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.error {
+  background-color: rgba(255, 255, 0, 0.5);
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+.profile-result {
+    height: 100px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-result > a {
+    color: white;
+}

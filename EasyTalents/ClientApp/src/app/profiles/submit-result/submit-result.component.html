@@ -1,0 +1,11 @@
+<section class="submit-view" *ngIf="!!submitResult">
+  <div class="profile-result created" *ngIf="submitResult.created">
+    <span class="success">Created successfully</span>
+  </div>
+  <div class="profile-result updated" *ngIf="submitResult.updated">
+    <span class="success">Updated successfully</span>
+  </div>
+  <div class="profile-result deleted" *ngIf="submitResult.deleted">
+    <span class="success">Deleted successfully</span>
+  </div>
+</section>

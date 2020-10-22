@@ -1,0 +1,86 @@
+<section class="profile-details" *ngIf="profile$ | async as profile">
+  <h3 class="heading">Profile</h3>
+  <section class="personal-info">
+    <h4 class="heading">Personal Information</h4>
+    <table>
+      <tbody>
+        <tr id="id">
+          <th scope="row">Id</th>
+          <td>{{profile.userProfileId}}</td>
+        </tr>
+        <tr id="name">
+          <th scope="row">Name</th>
+          <td>{{profile.name}}</td>
+        </tr>
+        <tr id="email">
+          <th scope="row">Email</th>
+          <td>{{profile.email}}</td>
+        </tr>
+        <tr id="phone">
+          <th scope="row">Phone</th>
+          <td>{{profile.phone}}</td>
+        </tr>
+        <tr id="city">
+          <th scope="row">City</th>
+          <td>{{profile.location.city | titlecase}}</td>
+        </tr>
+        <tr id="state">
+          <th scope="row">State</th>
+          <td>{{profile.location.state | titlecase}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="professional-info">
+    <h4 class="heading">Professional Information</h4>
+    <table>
+      <tbody>
+        <tr class="info" *ngFor="let info of profile.userProfessionalInformation">
+          <th scope="row">{{info.professionalInformation.description | titlecase}}</th>
+          <td>{{info.value}}</td>
+        </tr>
+        <tr id="salary">
+          <th scope="row">Salary expectation</th>
+          <td>{{profile.hourlySalary}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <h5 class="heading">Working hours</h5>
+    <ul class="workinghours-list">
+      <li class="working-hour" *ngFor="let info of profile.userDailyWorkingHours">
+        {{info.dailyWorkingHours.description}}
+      </li>
+    </ul>
+    <h5 class="heading">Working shifts</h5>
+    <ul class="workingshifts-list">
+      <li class="working-shift" *ngFor="let info of profile.userWorkingShifts">
+        {{info.workingShift.description}}
+      </li>
+    </ul>
+  </section>
+  <section class="knowledge">
+    <h4 class="heading">Knowledge</h4>
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Technology</th>
+          <th scope="col">Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="tech" *ngFor="let info of profile.userTechnologies">
+          <td>{{info.technology.description | titlecase}}</td>
+          <td>{{info.score}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  <section class="navigation">
+    <nav>
+      <a id="edit" mat-raised-button class="mat-primary"
+         [routerLink]=[profileUpdate]>Edit</a>
+      <a id="delete" mat-raised-button class="mat-warn" (click)="handleDelete()">Delete</a>
+    </nav>
+  </section>
+</section>
+<app-page-loader *ngIf="!(profile$ | async)"></app-page-loader>

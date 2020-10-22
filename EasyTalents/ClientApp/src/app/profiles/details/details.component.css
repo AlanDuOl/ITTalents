@@ -1,0 +1,77 @@
+/*reset list basic formatting*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul > li {
+  padding: 0;
+  margin: 0;
+}
+
+/*page formatting*/
+.profile-details > .heading {
+  text-align: center;
+}
+
+.profile-details > section .heading {
+  margin-top: 1em;
+}
+
+.profile-details {
+  position: relative;
+}
+
+
+/*all tables*/
+section > table {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+section tr {
+  border-bottom: 1px solid gray;
+}
+
+section td,
+section th {
+  padding: 0 0.5em;
+  padding-top: 0.5em;
+}
+
+section tr > th {
+  font-weight: 500;
+}
+
+
+/*professional-info section*/
+.workinghours-list,
+.workingshifts-list {
+  padding-left: 0.5em;
+}
+
+/*knowledge section*/
+.knowledge tbody td:last-child,
+.knowledge thead th:last-child {
+  text-align: center;
+}
+
+.knowledge tr > th {
+  background-color: rgb(230, 230, 230);
+}
+
+/*navigation section*/
+section > .navigation {
+  margin: 4rem auto;
+}
+
+.navigation nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navigation nav a {
+  width: 100px;
+  font-weight: 500;
+}

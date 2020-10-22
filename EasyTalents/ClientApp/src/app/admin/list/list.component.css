@@ -1,0 +1,54 @@
+
+/***********loader view****************/
+
+.list-container > h2 {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.list-header {
+  font-weight: 500;
+  background-color: lightgray;
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 0.5rem;
+  /*inner layout*/
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-element {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin: 0.5rem;
+  /*inner layout*/
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-element:hover {
+  cursor: pointer;
+  background-color: rgba(220, 220, 220, 0.5);
+  position: relative;
+  top: 3px;
+}
+
+.list-data:not(:first-child) {
+  flex: 0 1 30%;
+}
+
+.list-data {
+  text-align: center;
+}
+
+
+@media screen and (max-width: 767px) {
+  .hide {
+    display: none;
+  }
+
+  .list-data:not(:first-child) {
+    flex: 0 1 70%;
+  }
+}
+

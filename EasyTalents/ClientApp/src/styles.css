@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/purple-green.css';
+
+:root {
+    --form-border-radius: 5px;
+}
+
+@media screen and (max-width: 767px){
+  h4 {
+    font-size: 1.4rem;
+  }
+}
+
+/*to break long strings*/
+.break-string {
+  -ms-word-break: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}

@@ -1,0 +1,102 @@
+<section class="form-view" *ngIf="dataLoaded">
+  <h3 class="heading">{{name}}</h3>
+  <section>
+    <header id="form-header">
+      <h4 class="heading">{{labels.header[pageNumber]}}</h4>
+      <ul class="instructions" title="list of form instructions">
+        <!--required instruction must be the last in order to get propper formatting-->
+        <li class="instruction" *ngFor="let instruction of labels.instruction[pageNumber]">{{instruction}}</li>
+      </ul>
+    </header>
+    <form id="user-form" [formGroup]="form" (ngSubmit)="validateInputs(controlsPage().valid)" novalidate>
+      <!--page0-->
+      <div class="form-page page0" *ngIf="pageNumber === 0" formGroupName="{{pageName()}}">
+        <!--text inputs-->
+        <div class="text-element" *ngFor="let input of labels.page[pageNumber]">
+          <label class="question">
+            <span>{{input.label}}<span class="required"> *</span></span>
+            <input type="text" formControlName="{{input.name}}" placeholder="{{labels.placeholder}}" />
+          </label>
+          <!--Error messages-->
+          <app-validation-error [errors]="controlsPage().get(input.name).errors"
+          *ngIf="!!controlsPage().get(input.name).errors && controlsPage().get(input.name).touched"></app-validation-error>
+        </div>
+      </div>
+      <!--page 1-->
+      <div class="form-page page1" *ngIf="pageNumber === 1" formGroupName="{{pageName()}}">
+        <!--text inputs-->
+        <div class="text-element" *ngFor="let input of labels.page[pageNumber]"
+             formGroupName="{{input.formGroup}}">
+          <label class="question">
+            <span>{{input.label}}<span class="required" *ngIf="input.required"> *</span></span>
+            <input type="text" formControlName="{{input.name}}" placeholder="{{labels.placeholder}}" />
+          </label>
+          <!--Error messages-->
+          <app-validation-error [errors]="controlsPage().get(input.formGroup).get(input.name).errors"
+          *ngIf="!!controlsPage().get(input.formGroup).get(input.name).errors && controlsPage().get(input.formGroup).get(input.name).touched">
+          </app-validation-error>
+        </div>
+        <div class="text-element">
+          <label class="question">
+            <span>{{labels.hourlySalary.label}}<span class="required"> *</span></span>
+            <input type="text" formControlName="{{labels.hourlySalary.name}}" placeholder="{{labels.placeholder}}" />
+          </label>
+          <!--Error messages-->
+          <app-validation-error [errors]="controlsPage().get(labels.hourlySalary.name).errors"
+          *ngIf="!!controlsPage().get(labels.hourlySalary.name).errors && controlsPage().get(labels.hourlySalary.name).touched">
+          </app-validation-error>
+        </div>
+        <!--checkbox inputs-->
+        <div class="checkbox-element" formGroupName="{{input.formGroup}}"
+             *ngFor="let input of labels.checkbox">
+          <div class="question">
+            {{input.header}}
+          </div>
+          <div class="options">
+            <label class="option" *ngFor="let option of input.options">
+              <input type="checkbox" value="{{option.value}}" formControlName="{{option.name}}" />
+              {{option.label}}
+            </label>
+          </div>
+        </div>
+      </div>
+      <!--page 2-->
+      <div class="form-page page2" *ngIf="pageNumber === 2" formGroupName="{{pageName()}}">
+        <!--radio button inputs-->
+        <div class="radio-element" formGroupName="technologies" *ngFor="let key of techControls()">
+          <div class="question">{{key | titlecase}}<span class="required"> *</span></div>
+          <div class="radio-container">
+            <div><label>{{labels.technologies.startLabel}}</label></div>
+            <div class="options">
+              <label class="option" *ngFor="let option of labels.technologies.options">
+                <span>{{option}}</span>
+                <input type="radio" value="{{option}}" formControlName="{{key}}"
+                      checked="{{techGroup().get(key).value === option ? 'checked' : null}}"/>
+              </label>
+            </div>
+            <div><label>{{labels.technologies.endLabel}}</label></div>
+          </div>
+          <!--Error messages-->
+          <app-validation-error [errors]="techGroup().get(key).errors"
+          *ngIf="!!techGroup().get(key).errors && techGroup().get(key).touched">
+          </app-validation-error>
+        </div>
+        <!--text inputs-->
+        <div class="text-element" *ngFor="let input of labels.page[2]">
+          <label class="question">
+            <span>{{input.label}}<span class="required" *ngIf="input.required"> *</span></span>
+            <input type="text" formControlName="{{input.name}}" placeholder="{{labels.placeholder}}" />
+          </label>
+        </div>
+      </div>
+      <nav class="pagination">
+        <a class="btn btn-primary back" title="Previous page" *ngIf="pageNumber > 0" (click)="pageBack()">Back</a>
+        <a class="btn btn-primary next" title="Next page" (click)="validateInputs(controlsPage().valid)"
+          *ngIf="pageNumber < finalPage">Next</a>
+        <button type="submit" class="btn btn-success" title="submit form" 
+          *ngIf="pageNumber === finalPage">Submit</button>
+      </nav>
+    </form>
+  </section>
+</section>
+<app-page-loader *ngIf="!(dataLoaded)"></app-page-loader>

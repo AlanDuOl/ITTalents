@@ -1,0 +1,16 @@
+<section class="list-container" *ngIf="profiles$ | async as profiles">
+  <h2>Profiles</h2>
+  <div class="list-header">
+    <span class="list-data">Id</span>
+    <span class="list-data hide">Name</span>
+    <span class="list-data">Email</span>
+    <span class="list-data hide">Phone</span>
+  </div>
+  <div class="list-element" *ngFor="let profile of profiles" (click)="goToDetailsById(profile)">
+    <span class="list-data">{{profile?.id}}</span>
+    <span class="list-data break-string hide">{{profile?.name}}</span>
+    <span class="list-data break-string">{{profile?.email}}</span>
+    <span class="list-data hide">{{profile?.phone}}</span>
+  </div>
+</section>
+<app-page-loader *ngIf="!(profiles$ | async)"></app-page-loader>

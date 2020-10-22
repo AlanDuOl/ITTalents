@@ -1,0 +1,140 @@
+
+/***********generic************/
+.required {
+  color: red;
+}
+
+.question {
+  font-weight: 500;
+}
+
+/************form view*****************/
+/*view header and section*/
+.from-view > * {
+  padding: 0;
+  margin: 1rem auto;
+}
+
+.form-view > .heading {
+  /*create space between header and section*/
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/*required instruction with red color*/
+.form-view > section > header > .instructions > :last-child {
+  color: red;
+}
+
+.form-view header {
+  border: 2px solid gray;
+  border-radius: var(--form-border-radius);
+}
+
+.form-view header > .heading {
+  padding: 0.5em;
+  margin: 0;
+  color: #fff;
+  background-color: #007bff;
+  text-align: center;
+}
+/*make division line in headers to separate heading from instructions*/
+.form-view header > ul.instructions {
+  font-size: 14px;
+  padding: 5px;
+  list-style-type: none;
+  margin: 0;
+  border-top: 2px solid gray;
+}
+/*add space between instructions*/
+.form-view header > ul.instructions > li {
+  margin: 0.5em auto;
+}
+
+/************************inside form***************************/
+/***********inside form************/
+form > div.form-page > * {
+  margin: 0.5em auto;
+  padding: 0.5em;
+  border: 1px solid gray;
+  border-radius: var(--form-border-radius);
+}
+
+form > nav.pagination {
+  /*formatting*/
+  color: white;
+  margin: 1rem auto;
+  padding: 0.5rem;
+  border: 1px solid gray;
+  border-radius: var(--form-border-radius);
+  /*inner layout*/
+  display: flex;
+  justify-content: space-around;
+}
+/*button text*/
+form > nav.pagination > * {
+  color: white;
+}
+
+/*text elements*/
+form > div.form-page > div.text-element > label {
+  margin: 0;
+  /*inner layout*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+.text-element > label > input {
+  border: none;
+  border-bottom: 1px solid gray;
+  width: 70%;
+  margin-top: 0.5em;
+}
+
+/*checkbox elements*/
+form > div.form-page > div.checkbox-element > div.options {
+  margin-top: 1em;
+  /*layout*/
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+
+/*radio elements*/
+form > div.form-page > div.radio-element > div.radio-container {
+  margin-top: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-container > :nth-child(odd) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.radio-container > :nth-child(odd) > label {
+  text-align: center;
+}
+
+.radio-container > :nth-child(1) {
+  flex-basis: 30%;
+}
+
+.radio-container > .options {
+  padding: 1em;
+  flex: 1 1 60%;
+  /*inner layout*/
+  display: flex;
+  justify-content: space-between;
+}
+
+.radio-container > .options > .option {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
