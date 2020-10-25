@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthorizeService } from './authorize.service';
 import { tap } from 'rxjs/operators';
 import { ApplicationPaths, QueryParameterNames } from './api-authorization.constants';
-import { redirectCode } from '../app/constants';
+import { redirectCode, uiPath } from '../app/constants';
 import { ProfilesService } from '../app/profiles/profiles.service';
 
 @Injectable({
@@ -42,7 +42,7 @@ export class AuthorizeGuard implements CanActivate, CanActivateChild {
 
   private handleRoleAuthorization(isAuthorized: boolean) {
     if (!isAuthorized) {
-      this.router.navigate(['error', redirectCode.forbid]);
+      this.router.navigate([uiPath.error, redirectCode.forbid]);
     }
   }
 }
