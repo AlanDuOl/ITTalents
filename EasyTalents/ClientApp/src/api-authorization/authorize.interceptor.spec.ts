@@ -25,7 +25,7 @@ describe('AuthorizeInterceptor', () => {
     expect(service).toBeTruthy();
   }));
 
-  it('should add token to request', inject([AuthorizeInterceptor], (service: AuthorizeInterceptor) => {
+  it('should add token to request 1', inject([AuthorizeInterceptor], (service: AuthorizeInterceptor) => {
     // request with same origin and valid token
     const request = new HttpRequest('GET', `${window.location.origin}/API`);
     const expectedHeaderValue = `Bearer ${fakeTokenString}`;
@@ -47,7 +47,7 @@ describe('AuthorizeInterceptor', () => {
     );
   }));
 
-  it('should not add token to request 1', inject([AuthorizeInterceptor], (service: AuthorizeInterceptor) => {
+  it('should not add token to request 2', inject([AuthorizeInterceptor], (service: AuthorizeInterceptor) => {
     // request with different origin and valid token
     let url = `invalidUrl`
     let request = new HttpRequest('GET', url);
