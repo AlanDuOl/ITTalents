@@ -4,7 +4,7 @@ import { User, UserManager, WebStorageStateStore } from 'oidc-client';
 import { BehaviorSubject, concat, from, Observable } from 'rxjs';
 import { filter, map, mergeMap, take, tap, catchError } from 'rxjs/operators';
 import { ApplicationPaths, ApplicationName } from './api-authorization.constants';
-import { apiPath, errorType, profileSession } from '../app/constants';
+import { apiPath, errorType, requiredRole } from '../app/constants';
 import { FrontEndError } from '../app/modeldata';
 import { ErrorService } from '../app/error.service';
 
@@ -67,14 +67,29 @@ export class AuthorizeService {
   }
 
   private checkUserRoles(allowedRoles: string[], userRoles: string[]): boolean {
-    if ((allowedRoles == null || allowedRoles.length === 0) && (userRoles == null || userRoles.length === 0)) {
+    // if there is no role requirement and user has no role, allow access
+    if ((!allowedRoles || allowedRoles.length === 0) && (!userRoles || userRoles.length === 0)) {
       return true;
     }
-    let isAllowed = false;
-    if (!!allowedRoles) {
-      isAllowed = allowedRoles.every(aRole => userRoles.find(uRole => uRole === aRole));
-    } 
-    return isAllowed;
+    // if there is no role requirement but user has a role, deny access
+    if ((!allowedRoles || allowedRoles.length === 0) && (!!userRoles)) {
+      if (!!userRoles.find(role => role === requiredRole)) {
+        return false;
+      }
+    }
+    // if allowedRoles is true, check if user has that role
+    let result = false;
+    // if user has no role, return false
+    if (!userRoles) {
+      return result;
+    }
+    allowedRoles.forEach(role => {
+      let userRole = userRoles.find(uRole => uRole === role);
+      if (!!userRole) {
+        result = true;
+      }
+    });
+    return result;
   }
 
   private fetchUserRoles(): Observable<string[]> {
