@@ -17,17 +17,18 @@ let profiles: ProfilesService;
 let scheduler: TestScheduler;
 
 describe('AuthorizeGuard', () => {
-  mockAuthService = {
-    isAuthenticated: jasmine.createSpy('isAuthenticated').and.returnValues(of(true), of(false)),
-    isAuthorized: jasmine.createSpy('isAuthorized').and.returnValues(of(true), of(false))
-  }
-  mockProfilesService = {
-    setUserProfile: jasmine.createSpy('setUserProfile').and.callFake(() => {})
-  }
-  mockRouter = {
-    navigate: jasmine.createSpy('navigate').and.callFake(() => {})
-  }
+  
   beforeEach(() => {
+    mockAuthService = {
+      isAuthenticated: jasmine.createSpy('isAuthenticated').and.returnValues(of(true), of(false)),
+      isAuthorized: jasmine.createSpy('isAuthorized').and.returnValues(of(true), of(false))
+    }
+    mockProfilesService = {
+      setUserProfile: jasmine.createSpy('setUserProfile').and.callFake(() => {})
+    }
+    mockRouter = {
+      navigate: jasmine.createSpy('navigate').and.callFake(() => {})
+    }
     TestBed.configureTestingModule({
       providers: [
         AuthorizeGuard,
@@ -107,6 +108,8 @@ describe('AuthorizeGuard', () => {
         const expectedResult = { a: true }
         expectObservable(resultTrue).toBe(expectedMarbles, expectedResult);
       });
+      // should not be called when user is not authorized
+      expect(router.navigate).not.toHaveBeenCalled();
     }
     else {
       // this should not run
