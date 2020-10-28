@@ -21,21 +21,20 @@ https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-ap
 
 The project is composed of a front-end built with AngularJS and a RESTFull API built with .NET Core 3.1.
 
-The Database model is created using Entity Framework Core 3.1 with a Database Context and Data Models.
-The database is created/updated using Migrations and accessed using the repository pattern through the Controllers 
-who handle the requests to the API.
-The data is queried from the database using the lazy-loading technique.
-The API uses the NLog package to log errors and information to files.
+### API
+- The database model is created using Entity Framework Core 3.1 with a Database Context and Data Models.
+- The database is created/updated using Migrations.
+- The database is accessed using the repository pattern through the Controllers.
+- The data is retrieved from the database using the lazy-loading technique.
+- The API uses the NLog package to log errors and information to files.
 
-The front-end uses Bootstrap and Angular Material to style the pages. The forms use FormControls to validate user input.
-There is an exception handler system that logs front-end errors to the API.
-
-# UnitTest project
-
-It is a unit test project used to test the back-end API.
+### Front-end
+- The pages are styled with Bootstrap and Angular Material.
+- The form are built with reactive forms.
+- There is an exception handler system that logs front-end errors to the API.
 
 
-# How to use it
+## How to use it
 
 Follow the bellow guides to run this project in your machine
 
