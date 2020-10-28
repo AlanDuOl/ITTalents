@@ -126,6 +126,6 @@ time limits.
 
 © Alan D Oliveira
 
-Lincensed under the [MIT License](LICENSE).
+Licensed under the [MIT License](LICENSE.txt).
 
 
