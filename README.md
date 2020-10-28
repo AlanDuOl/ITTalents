@@ -1,17 +1,17 @@
-# EasyTalents
+# ITTalents
 
 This repo is composed of two projects: a unit test project called 'UnitTest' and the main project called
 'EasyTelents'. It also contains the Visual Studio solution for both projects a license file and this README.md file.
 
 
-## EasyTalents Project
+# EasyTalents Project
 
-# Description
+## Description
 The main project 'EasyTelents' is a talent bank for developers. It allows a user to register and create a profile with personal and profissional information.
 It also has default 'Admin' user that can list the the developers.
 
 
-# Technical details
+## Technical details
 
 This project has been developed from a template that creates a basic structure and a built-in authentication/authorization system.
 I have only made some small changes in the authorization guard to restrict access by roles.
@@ -40,17 +40,17 @@ It is a unit test project used to test the back-end API.
 Follow the bellow guides to run this project in your machine
 
 
-# 1 - On Windows 10
+## 1 - On Windows 10
 
 Perform the actions bellow in the right order.
 
 
-# 1.1 - Get the project repository to your machine:
+### 1.1 - Get the project repository to your machine:
 
 - Clone with Git or download it and unzip.
 
 
-# 1.2 - Install the necessary tools in your machine:
+### 1.2 - Install the necessary tools in your machine:
 
 - Node.js
 	- Download: https://nodejs.org/en/download/
@@ -66,7 +66,7 @@ and 'Node.js development'.
 * Obs: if you don't find the tools on the links above, search for the name on the internet and you will surely find it.
 
 
-# 1.3 - Configure the database connection
+### 1.3 - Configure the database connection
 
 - The 'EasyTalents' project is configured to use SqLite and SqlServer.
 - The default behaviour is to use a SqlServer connection.
@@ -85,20 +85,20 @@ Inside 'services.AddDbContext' call:
 		to this: options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")).UseLazyLoadingProxies()
 
 
-# 1.4 - Create the database
+### 1.4 - Create the database
 	1. Open the projects Solution with Visual Studio
 	2. Open the Package Manager Console - PMC (it can be found in View menu of Visual Studio).
 	3. Make sure 'EasyTalents' is the default project inside PMC window bar.
 	4. Type 'Update-Database' and hit enter. If everything goes right you should see a 'Done' output in the console.
 
 
-# 1.5 - Build 'EasyTalents' project
+### 1.5 - Build 'EasyTalents' project
 - Go to 'EasyTalents' project file, right click it and choose the 'build' option it the pop-up menu.
 	- This will install the project depencies with npm package manager for the Angular client (this will take a while).
 	- When the build is finished you can run the project.
 
 
-# 1.6 - Run 'EasyTalents' project
+### 1.6 - Run 'EasyTalents' project
 
 	1. Open Visual Studio
 	2. Right click on 'EasyTalents' project folder and choose 'Set as Startup Project'
@@ -107,7 +107,7 @@ Inside 'services.AddDbContext' call:
 time limits.
 
 
-# 1.7 - Run the Tests
+### 1.7 - Run the Tests
 
 - Run API tests:
 	1. Open Visual Studio
@@ -122,7 +122,7 @@ time limits.
 	4. Type the command: 'npm run test'
 
 
-## License & copyright
+# License & copyright
 
 © Alan D Oliveira
 
