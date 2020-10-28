@@ -1,15 +1,34 @@
 # EasyTalents
 
 This repo is composed of two projects: a unit test project called 'UnitTest' and the main project called
-'EasyTelents'. It also contains the Visual Studio solution for both projects and this README.md file.
+'EasyTelents'. It also contains the Visual Studio solution for both projects a license file and this README.md file.
 
 
-# EasyTalents Project
+## EasyTalents Project
 
+# Description
 The main project 'EasyTelents' is a talent bank for developers. It allows a user to register and create a profile with personal and profissional information.
 It also has default 'Admin' user that can list the the developers.
-It is composed of a client front-end built with AngularJS and a RESTFull API built with .NET Core 3.1.
 
+
+# Technical details
+
+This project has been developed from a template that creates a basic structure and a built-in authentication/authorization system.
+I have only made some small changes in the authorization guard to restrict access by roles.
+
+The template for this project has been created following this guide:
+https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-api-authorization?view=aspnetcore-3.1
+
+The project is composed of a front-end built with AngularJS and a RESTFull API built with .NET Core 3.1.
+
+The Database model is created using Entity Framework Core 3.1 with a Database Context and Data Models.
+The database is created/updated using Migrations and accessed using the repository pattern through the Controllers 
+who handle the requests to the API.
+The data is queried from the database using the lazy-loading technique.
+The API uses the NLog package to log errors and information to files.
+
+The front-end uses Bootstrap and Angular Material to style the pages. The forms use FormControls to validate user input.
+There is an exception handler system that logs front-end errors to the API.
 
 # UnitTest project
 
@@ -79,10 +98,29 @@ Inside 'services.AddDbContext' call:
 	- When the build is finished you can run the project.
 
 
-# 1.6 - Run the project
+# 1.6 - Run 'EasyTalents' project
+
+	1. Open Visual Studio
+	2. Right click on 'EasyTalents' project folder and choose 'Set as Startup Project'
+	3. On Visual Studio go to 'Debug' menu on top and choose 'Start without debuggin' or use the shortcut Ctrl + F5
+	Obs: if a client timeout error is shown on the browser, refresh the page. Sometimes it happens when when the process exceeds the
+time limits.
 
 
 # 1.7 - Run the Tests
+
+- Run API tests:
+	1. Open Visual Studio
+	2. Build 'EasyTalents' project
+	3. Build 'UnitTest' project
+	4. Go to 'UnitTest' project file right click on it and choose 'Run Tests'
+
+- Run 'EasyTalents' tests:
+	1. Open Visual Studio
+	2. Open a Terminal (on Visual Studio 'View' menu)
+	3. On Terminal navigate to 'ClientApp'
+	4. Type the command: 'npm run test'
+
 
 ## License & copyright
 
