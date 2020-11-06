@@ -7,7 +7,7 @@ This repo is composed of two projects: a unit test project called 'UnitTest' and
 # EasyTalents Project
 
 ## Description
-The main project 'EasyTelents' is a talent bank for developers. It allows a user to register and create a profile with personal and profissional information.
+The main project 'EasyTelents' is a talent bank for developers. It allows a user to register and create a profile with personal and professional information.
 It also has default 'Admin' user that can list the the developers.
 
 
