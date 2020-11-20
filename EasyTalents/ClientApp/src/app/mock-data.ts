@@ -172,6 +172,13 @@ export class MockLoaderComponent {}
 })
 export class MockAppRootComponent {}
 
+@Component({
+  selector: 'app-nav-menu',
+  template: '<p id="nav-menu">Nav Menu</p>',
+  styles: ['']
+})
+export class MockNavMenuComponent {}
+
 @NgModule({
   declarations: [MockAppRootComponent]
 })
