@@ -29,7 +29,7 @@ describe('ErrorComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ErrorComponent);
     component = fixture.componentInstance;
-    route = TestBed.get(ActivatedRoute);
+    route = fixture.debugElement.injector.get(ActivatedRoute);
     scheduler = new TestScheduler((actual, expected) => {
       expect(actual).toEqual(expected);
     });

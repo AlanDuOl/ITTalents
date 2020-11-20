@@ -25,7 +25,7 @@ describe('SubmitResultComponent', () => {
     fixture = TestBed.createComponent(SubmitResultComponent);
     component = fixture.componentInstance;
     element = fixture.debugElement.nativeElement;
-    service = TestBed.get(ProfilesService);
+    service = fixture.debugElement.injector.get(ProfilesService);
     fixture.detectChanges();
   });
 

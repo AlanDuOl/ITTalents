@@ -34,7 +34,7 @@ describe('NavMenuComponent', () => {
     fixture = TestBed.createComponent(NavMenuComponent);
     component = fixture.componentInstance;
     element = fixture.debugElement.nativeElement;
-    auth = TestBed.get(AuthorizeService);
+    auth = fixture.debugElement.injector.get(AuthorizeService);
     fixture.detectChanges();
   });
 
