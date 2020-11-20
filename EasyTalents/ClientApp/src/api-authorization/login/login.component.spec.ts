@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { mockRouteSnapshotLogin } from '../../app/mock-data';
 import { AuthorizeService } from '../authorize.service';
+import { AuthenticationResultStatus } from '../authorize.service';
 
 import { LoginComponent } from './login.component';
 
@@ -16,11 +17,19 @@ describe('LoginComponent', () => {
   let authorizeService: AuthorizeService;
 
   beforeEach(async(() => {
-    mockRouter = {}
+    mockRouter = {
+      navigate: jasmine.createSpy('navigate').and.callFake(() => {}),
+      navigateByUrl: jasmine.createSpy('navigateByUrl').and.callFake(() => {}),
+    }
     mockActivatedRoute = {
       snapshot: mockRouteSnapshotLogin
     }
-    mockAuthService = {}
+    mockAuthService = {
+      signIn: jasmine.createSpy('signIn').and
+      .returnValue({ status: AuthenticationResultStatus.Success, state: '' }),
+      completeSignIn: jasmine.createSpy('completeSignIn').and
+      .returnValue({ status: AuthenticationResultStatus.Success, state: '' })
+    }
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
       providers: [
