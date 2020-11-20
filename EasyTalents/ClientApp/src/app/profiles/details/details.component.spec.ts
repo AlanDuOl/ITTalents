@@ -176,7 +176,9 @@ describe('DetailsComponent', () => {
       // submitResult should be equal to #deleteProfile emitted value
       // session storage should reset item value
       // router should navigate to result component
-      component.handleDelete();
+      fixture.ngZone.run(() => {
+          component.handleDelete();
+      });
       expect(component.submitResult).toEqual(mockSubmitResult);
       expect(sessionStorage.getItem(profileSession.item)).toBe('');
       expect(router.navigate).toHaveBeenCalledWith([expectedRoute]);

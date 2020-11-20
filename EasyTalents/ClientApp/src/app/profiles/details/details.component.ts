@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgZone, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material';
 import { ConfirmDialogComponent } from '../../dialog/confirm-dialog.component';
@@ -22,7 +22,7 @@ export class DetailsComponent implements OnInit {
   submitResult: ProfileResult;
 
   constructor(private service: ProfilesService, private dialog: MatDialog, private router: Router,
-    private error: ErrorService, private redirect: RedirectService) { }
+    private error: ErrorService, private redirect: RedirectService, private ngZone: NgZone) { }
 
   ngOnInit() {
     this.profile$ = this.service.fetchProfile().pipe(
@@ -53,7 +53,9 @@ export class DetailsComponent implements OnInit {
       res => {
         this.submitResult = res;
         sessionStorage.setItem(profileSession.item, '');
-        this.router.navigate([uiPath.profiles.result]);
+        this.ngZone.run(() => {
+          this.router.navigate([uiPath.profiles.result]);
+        });
       },
       err => { this.redirect.redirectOnRequestError(+err.status) },
     );
