@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthorizeService } from '../authorize.service';
+import { mockRouteSnapshotLogout } from '../../app/mock-data';
 
 import { LogoutComponent } from './logout.component';
 
@@ -16,7 +17,9 @@ describe('LogoutComponent', () => {
 
   beforeEach(async(() => {
     mockAuthService = {}
-    mockActivedRoute = {}
+    mockActivedRoute = {
+      snapshot: mockRouteSnapshotLogout
+    }
     mockRouter = {}
     TestBed.configureTestingModule({
       declarations: [ LogoutComponent ],

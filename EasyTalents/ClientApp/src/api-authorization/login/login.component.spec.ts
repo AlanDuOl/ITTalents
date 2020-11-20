@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
+import { mockRouteSnapshotLogin } from '../../app/mock-data';
 import { AuthorizeService } from '../authorize.service';
 
 import { LoginComponent } from './login.component';
@@ -16,7 +17,9 @@ describe('LoginComponent', () => {
 
   beforeEach(async(() => {
     mockRouter = {}
-    mockActivatedRoute = {}
+    mockActivatedRoute = {
+      snapshot: mockRouteSnapshotLogin
+    }
     mockAuthService = {}
     TestBed.configureTestingModule({
       declarations: [ LoginComponent ],
