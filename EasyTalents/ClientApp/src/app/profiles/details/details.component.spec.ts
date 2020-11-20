@@ -44,7 +44,7 @@ describe('DetailsComponent', () => {
           deleteProfile(): Observable<ProfileResult> { return of(mockSubmitResult) },
           submittedResult: null
       };
-      mockRouter = { navigate: jasmine.createSpy('navigate') };
+      mockRouter = { navigate: jasmine.createSpy('navigate').and.callFake(() => {}) };
       mockDialog = { open: jasmine.createSpy('open').and.returnValues(
           { afterClosed: () => of(true) }, { afterClosed: () => of(false) }) };
       @NgModule({
