@@ -27,7 +27,6 @@ The project is composed of a front-end built with AngularJS and a RESTFull API b
 - The form are built with reactive forms.
 - There is an exception handler system that logs front-end errors to the API.
 
-
 ## How to use it
 Follow the bellow guide in the right order to run this project in your machine.
 
@@ -57,17 +56,22 @@ You need basic understanding of Windows to follow this guide.
 	3. Wait for the project to load on Visual Studio (you should see a 'ready' message on the bottom left of Visual Studio).
 
 ### 1.2 - Install tools in your machine
-- Node.js:
-	- Download: https://nodejs.org/en/download/.
-	- Run the wizard and install everything that is suggested.
-- Visual Studio Community 2019:
-	- Download: https://visualstudio.microsoft.com/pt-br/vs/community/.
-	- Visual Studio has an Installer that lets you choose what's going to be installed. Make sure it installs 'ASP.NET and Web development'	and 'Node.js development'.
-- Microsoft Sql Server Express 2019 (skip this if you want to use a different database):
-	- Download: https://www.microsoft.com/en-us/download/details.aspx?id=55994
-	- Run the wizard and install the basic version.
-	- After the installation is finished copy the connection string in the instalation window for latter use.
-* Obs: if you don't find the tools on the links above, search on the internet and you will surely find them.
+- Requirements:
+	- You need admin rights to install the tools.
+- Tools to install:
+	- Node.js:
+		- Download: https://nodejs.org/en/download/.
+		- Run the wizard and install everything that is suggested.
+		- When Node.js installation finish, a prompt window will open to install chocolatey (a software needed to install dependencies for Node.js). Just hit any key twice and the installation will proceed to new window 'PowerShell'.
+		- When the installation in PowerShell is finished type ENTER and hit enter to finish.
+	- Visual Studio Community 2019:
+		- Download: https://visualstudio.microsoft.com/pt-br/vs/community/.
+		- Visual Studio has an Installer that lets you choose what's going to be installed. Make sure it installs 'ASP.NET and Web development', 'Node.js development' and 'Python'.
+	- Microsoft Sql Server Express 2019 (skip this if you want to use a different database - see section 1.3):
+		- Download: https://www.microsoft.com/en-us/download/details.aspx?id=55994
+		- Run the wizard and install the basic version.
+		- After the installation is finished copy the connection string in the instalation window for latter use.
+	* Obs: if you don't find the tools on the links above, search on the internet and you will surely find them.
 
 ### 1.3 - Configure the database connection
 - Default configuration:
