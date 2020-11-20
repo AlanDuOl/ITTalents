@@ -132,6 +132,9 @@ describe('DetailsComponent', () => {
   it('#service.fetchProfile return null should redirect', () => {
       // arrange
       spyOn(service, 'fetchProfile').and.returnValue(of(null));
+      spyOn(router, 'navigate').and.callFake(() => {
+          return new Promise<boolean>((resolve, reject) => { return resolve(true) });
+      });
       const expectedRoute = [uiPath.error, redirectCode.noProfile];
 
       // act
