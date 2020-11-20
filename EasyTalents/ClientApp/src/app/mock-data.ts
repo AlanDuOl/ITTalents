@@ -1,7 +1,9 @@
 import { Component, NgModule } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
 import { ProfileSubmit, ProfileResult, ProfileList, Profile } from "./profiles/model-data";
 import { DailyWorkingHours, ProfessionalInformation, Technology, WorkingShift } from './modeldata';
+import { ActivatedRouteSnapshot, convertToParamMap, UrlSegment } from '@angular/router';
+import { of } from 'rxjs';
 
 export const mockProfileSubmit: ProfileSubmit = {
     profileId: 1,
@@ -184,3 +186,45 @@ export const mockSubmitResult: ProfileResult = {
   updated: false,
   deleted: false
 };
+
+export const mockRouteSnapshotLogin: ActivatedRouteSnapshot = {
+  url: [
+    new UrlSegment('login', { name: 'login' }),
+    new UrlSegment('login', { name: 'login' })
+  ],
+  paramMap: convertToParamMap(of({})),
+  queryParamMap: convertToParamMap(of({})),
+  params: {},
+  data: {},
+  queryParams: {},
+  routeConfig: {},
+  component: '',
+  fragment: '',
+  outlet: '',
+  parent: null,
+  root: null,
+  firstChild: null,
+  children: null,
+  pathFromRoot: null
+}
+
+export const mockRouteSnapshotLogout: ActivatedRouteSnapshot = {
+  url: [
+    new UrlSegment('logout', { name: 'logout' }),
+    new UrlSegment('logout', { name: 'logout' })
+  ],
+  paramMap: convertToParamMap(of({})),
+  queryParamMap: convertToParamMap(of({})),
+  params: {},
+  data: {},
+  queryParams: {},
+  routeConfig: {},
+  component: '',
+  fragment: '',
+  outlet: '',
+  parent: null,
+  root: null,
+  firstChild: null,
+  children: null,
+  pathFromRoot: null
+}
