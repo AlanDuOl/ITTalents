@@ -9,27 +9,26 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
 
   beforeEach((() => {
-      TestBed.configureTestingModule({
-          declarations: [
-            AppComponent,
-            MockNavMenuComponent
-          ],
-          imports: [
-            RouterModule.forRoot([]),
-            HttpClientModule,
-          ]
-      })
-      .compileComponents();
+    TestBed.configureTestingModule({
+      declarations: [
+        AppComponent,
+        MockNavMenuComponent
+      ],
+      imports: [
+        RouterModule.forRoot([]),
+        HttpClientModule,
+      ]
+    }).compileComponents();
   }));
 
   beforeEach(() => {
-      fixture = TestBed.createComponent(AppComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
   it('should create', () => {
-      expect(component).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 
 });

@@ -4,6 +4,7 @@ import { ProfileSubmit, ProfileResult, ProfileList, Profile } from "./profiles/m
 import { DailyWorkingHours, ProfessionalInformation, Technology, WorkingShift } from './modeldata';
 import { ActivatedRouteSnapshot, convertToParamMap, UrlSegment } from '@angular/router';
 import { of } from 'rxjs';
+import { BrowserModule } from '@angular/platform-browser';
 
 export const mockProfileSubmit: ProfileSubmit = {
     profileId: 1,
@@ -166,24 +167,25 @@ export class AppLoginMenuComponent {}
 export class MockLoaderComponent {}
 
 @Component({
-  selector: 'app-root',
-  template: '<p id="root">App Root</p>',
-  styles: ['']
-})
-export class MockAppRootComponent {}
-
-@Component({
   selector: 'app-nav-menu',
   template: '<p id="nav-menu">Nav Menu</p>',
   styles: ['']
 })
 export class MockNavMenuComponent {}
 
-@NgModule({
-  declarations: [MockAppRootComponent],
-  bootstrap: [MockAppRootComponent]
-})
-export class MockAppModule {}
+// @Component({
+//   selector: 'app-root',
+//   template: '<p id="root">App Root</p>',
+//   styles: ['']
+// })
+// export class MockAppRootComponent {}
+
+// @NgModule({
+//   declarations: [MockAppRootComponent],
+//   imports: [BrowserModule],
+//   bootstrap: [MockAppRootComponent]
+// })
+// export class MockAppModule {}
 
 export const mockRequestError = { status: 1, message: 'error' };
 

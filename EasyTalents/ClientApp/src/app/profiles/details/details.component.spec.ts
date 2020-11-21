@@ -6,7 +6,8 @@ import { DetailsComponent } from './details.component';
 import { ConfirmDialogComponent } from '../../dialog/confirm-dialog.component';
 import { ProfilesService } from '../profiles.service';
 import { Observable, of, throwError } from 'rxjs';
-import { mockProfile, mockSubmitResult, MockLoaderComponent } from '../../mock-data';
+import { mockProfile, mockSubmitResult, MockLoaderComponent, MockAppRootComponent
+} from '../../mock-data';
 import { Profile, ProfileResult } from '../model-data';
 import { TestScheduler } from 'rxjs/testing';
 import { MatDialog } from '@angular/material/dialog';
@@ -49,7 +50,7 @@ describe('DetailsComponent', () => {
           { afterClosed: () => of(true) }, { afterClosed: () => of(false) }) };
       @NgModule({
           declarations: [
-              ConfirmDialogComponent,
+              ConfirmDialogComponent
           ],
           imports: [
               MaterialModule,
