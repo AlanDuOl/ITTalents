@@ -180,9 +180,10 @@ export class MockAppRootComponent {}
 export class MockNavMenuComponent {}
 
 @NgModule({
-  declarations: [MockAppRootComponent]
+  declarations: [MockAppRootComponent],
+  bootstrap: [MockAppRootComponent]
 })
-export class MockModule {}
+export class MockAppModule {}
 
 export const mockRequestError = { status: 1, message: 'error' };
 

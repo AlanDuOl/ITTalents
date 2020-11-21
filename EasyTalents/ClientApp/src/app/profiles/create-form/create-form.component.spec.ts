@@ -8,7 +8,7 @@ import { ValidationErrorComponent } from '../../validation-error/validation-erro
 import { ProfilesService } from '../profiles.service';
 import { ProfileSubmit, ProfileResult } from '../model-data';
 import { maxPageNumber, formLabels } from '../constants';
-import { mockProfileSubmit, mockProfileResult, mockControls, MockLoaderComponent, MockModule
+import { mockProfileSubmit, mockProfileResult, mockControls, MockLoaderComponent
 } from '../../mock-data';
 import { RedirectService } from 'src/app/redirect.service';
 import { redirectCode, uiPath } from 'src/app/constants';
@@ -47,7 +47,6 @@ describe('CreateFormComponent', () => {
                 MockLoaderComponent,
             ],
             imports: [
-                MockModule,
                 ReactiveFormsModule,
                 HttpClientModule,
                 RouterModule.forRoot([])
