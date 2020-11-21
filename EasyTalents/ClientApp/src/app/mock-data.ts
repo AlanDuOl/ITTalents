@@ -173,20 +173,6 @@ export class MockLoaderComponent {}
 })
 export class MockNavMenuComponent {}
 
-// @Component({
-//   selector: 'app-root',
-//   template: '<p id="root">App Root</p>',
-//   styles: ['']
-// })
-// export class MockAppRootComponent {}
-
-// @NgModule({
-//   declarations: [MockAppRootComponent],
-//   imports: [BrowserModule],
-//   bootstrap: [MockAppRootComponent]
-// })
-// export class MockAppModule {}
-
 export const mockRequestError = { status: 1, message: 'error' };
 
 export const mockBaseUrl = 'http://www.abc.com';
