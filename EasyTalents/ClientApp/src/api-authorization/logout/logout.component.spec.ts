@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AuthenticationResultStatus, AuthorizeService } from '../authorize.service';
 import { mockRouteSnapshotLogout } from '../../app/mock-data';
-
 import { LogoutComponent } from './logout.component';
 import { of } from 'rxjs';
 
