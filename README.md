@@ -63,7 +63,7 @@ You need basic understanding of Windows to follow this guide.
 		- Download: https://visualstudio.microsoft.com/pt-br/vs/community/.
 		- Visual Studio has an Installer that lets you choose what's going to be installed. Make sure it installs 'ASP.NET and Web development', 'Node.js development' and 'Python'.
 	- Microsoft Sql Server Express 2019 (skip this if you want to use a different database - see section 1.3):
-		- Download: https://www.microsoft.com/en-us/download/details.aspx?id=55994
+		- Download: https://www.microsoft.com/en-us/Download/details.aspx?id=101064
 		- Run the wizard and install the basic version.
 		- After the installation is finished copy the connection string in the instalation window for latter use.
 	* Obs: if you don't find the tools on the links above, search on the internet and you will surely find them.
@@ -92,9 +92,10 @@ You need basic understanding of Windows to follow this guide.
 			to this: options.UseSqlite(Configuration.GetConnectionString("SqliteConnection")).UseLazyLoadingProxies().
 
 ### 1.4 - Create the database
-	1. Open the project (section 1.1).
+	1. Open the project (section 1.2).
 	2. Check if the server is running:
-		1. Open 'SQL Server 2019 Configuration Manager'.
+		1. Open 'SQL Server 2019 Configuration Manager':
+			- Type 'SQL Server 2019 Configuration Manager' in windows start menu and click the icon that appears.
 		2. Select 'SQL Server Services' at the top left.
 		3. On the right side of the window locate 'SQL Server (SQLEXPRESS)' under the column 'name'.
 		4. Check if the state for 'SQL Server (SQLEXPRESS)' is 'Running', if not, right click it and choose 'Start' on the pop-up menu.
@@ -109,7 +110,7 @@ You need basic understanding of Windows to follow this guide.
 			- If everything goes right you should see a 'Done' output inside the PCM window after some time.
 
 ### 1.5 - Build 'EasyTalents' project
-	1. Open the project (section 1.1).
+	1. Open the project (section 1.2).
 	2. Open 'Solutions Explorer' window:
 		- On Visual Studio 'View' menu click the option 'Solutions Explorer' to open it.
 	3. Right click on 'EasyTalents' inside the 'Solutions Explorer' window and choose the 'Build' option in the pop-up menu:
@@ -117,7 +118,7 @@ You need basic understanding of Windows to follow this guide.
 		- When the build is finished you can run the project.
 
 ### 1.6 - Run 'EasyTalents' project
-	1. Open the project (section 1.1).
+	1. Open the project (section 1.2).
 	2. Open 'Solutions Explorer' window:
 		- On Visual Studio 'View' menu click the option 'Solutions Explorer' to open it.
 	3. Set the project as default project:
@@ -128,7 +129,7 @@ You need basic understanding of Windows to follow this guide.
 
 ### 1.7 - Run Tests
 - Run API tests:
-	1. Open the project (section 1.1).
+	1. Open the project (section 1.2).
 	2. Open 'Solutions Explorer' window:
 		- On Visual Studio 'View' menu click the option 'Solutions Explorer' to open it.
 	3. Build 'EasyTalents' project (If you completed section 1.5 you can skip this):
@@ -139,7 +140,7 @@ You need basic understanding of Windows to follow this guide.
 		- Right click on 'UnitTest' inside the 'Solutions Explorer' window and choose 'Run Tests'.
 
 - Run Front-end tests:
-	1. Open the project (section 1.1).
+	1. Open the project (section 1.2).
 	2. Open a Terminal:
 		- On Visual Studio 'View' menu look for an option called 'Terminal' and click it.
 		- A window will open. It allow you to type commands when a cursor is visible.
