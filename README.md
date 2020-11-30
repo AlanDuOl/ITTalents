@@ -34,20 +34,21 @@ Follow the bellow guide in the right order to run this project in your machine.
 You need basic understanding of Windows to follow this guide.
 
 ### 1 - Get the project repository to your machine
-- Clone the project with Git:
-	1. Choose or create a folder to save the project.
-	2. Install Git in your machine if you don't have it already:
-		- Download Git installer an run it (link: https://git-scm.com/download/win).
-		*Obs: If you don't find Git in the above link, search in the web and you will find it.
-	3. Open Git Terminal:
-		- With Git installed, right click inside the folder form step 1 and choose 'Git Bash Here' in the pop-up menu or open 'Git Bash' in the Windows start menu and navigate to the folder path of step 1.
-	4. Clone the project:
-		- Inside Git Bash Terminal type 'git clone https://github.com/AlanDuOl/ITTalents.git'. This will create a folder called 'ITTalents'.
-- Download the project:
-	- On project repository (https://github.com/AlanDuOl/ITTalents):
-		1. Locate a green button called 'Code' in the '<> Code' menu.
-		2. Click the 'Code' button and click the option 'Download ZIP' inside the pop-up menu. This will download the project to your machine in a compressed format (.zip).
-		3. Uncompress the project file. It will generate a folder called 'ITTalents'.
+- Choose one of the two options bellow:
+	1. Clone the project with Git:
+		1. Choose or create a folder to save the project.
+		2. Install Git in your machine if you don't have it already:
+			- Download Git installer an run it (link: https://git-scm.com/download/win).
+			*Obs: If you don't find Git in the above link, search in the web and you will find it.
+		3. Open Git Terminal:
+			- With Git installed, right click inside the folder form step 1 and choose 'Git Bash Here' in the pop-up menu or open 'Git Bash' in the Windows start menu and navigate to the folder path of step 1.
+		4. Clone the project:
+			- Inside Git Bash Terminal type 'git clone https://github.com/AlanDuOl/ITTalents.git'. This will create a folder called 'ITTalents'.
+	2. Download the project:
+		- On project repository (https://github.com/AlanDuOl/ITTalents):
+			1. Locate a green button called 'Code' in the '<> Code' menu.
+			2. Click the 'Code' button and click the option 'Download ZIP' inside the pop-up menu. This will download the project to your machine in a compressed format (.zip).
+			3. Uncompress the project file. It will generate a folder called 'ITTalents-main'.
 
 ### 1.1 - Open the project with Visual Studio
 - Open the project:
