@@ -50,13 +50,7 @@ You need basic understanding of Windows to follow this guide.
 			2. Click the 'Code' button and click the option 'Download ZIP' inside the pop-up menu. This will download the project to your machine in a compressed format (.zip).
 			3. Uncompress the project file. It will generate a folder called 'ITTalents-main'.
 
-### 1.1 - Open the project with Visual Studio
-- Open the project:
-	1. Open the folder 'ITTalents'.
-	2. Double click 'EasyTalents.sln' file inside the 'ITTalents' folder.
-	3. Wait for the project to load on Visual Studio (you should see a 'ready' message on the bottom left of Visual Studio).
-
-### 1.2 - Install tools in your machine
+### 1.1 - Install tools in your machine
 - Requirements:
 	- You need admin rights to install the tools.
 - Tools to install:
@@ -73,6 +67,12 @@ You need basic understanding of Windows to follow this guide.
 		- Run the wizard and install the basic version.
 		- After the installation is finished copy the connection string in the instalation window for latter use.
 	* Obs: if you don't find the tools on the links above, search on the internet and you will surely find them.
+
+### 1.2 - Open the project with Visual Studio
+- Open the project:
+	1. Open the folder 'ITTalents'.
+	2. Double click 'EasyTalents.sln' file inside the 'ITTalents' folder.
+	3. Wait for the project to load on Visual Studio (you should see a 'ready' message on the bottom left of Visual Studio).
 
 ### 1.3 - Configure the database connection
 - Default configuration:
