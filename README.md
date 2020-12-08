@@ -140,7 +140,7 @@ You need basic understanding of Windows to follow this guide.
 		* Obs: if the browser window does not open it's probably because your browser is configured not to accept allow it.
 
 ## How to use it
-The project Home page has a detailed tutorial on how to use the project.
+The project Home page has a detailed tutorial on how to use it.
 
 # License & copyright
 
